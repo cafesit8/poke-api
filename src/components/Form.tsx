@@ -9,18 +9,19 @@ export default function Form() {
   const navigate = useNavigate()
   async function handleSubmit(e: any){
     e.preventDefault();
-    if(e.target.name.value !== ''){
-      const data = await getPokeData(e.target.name.value)
+    const word: string = e.target.name.value
+    if(word !== ''){
+      const data = await getPokeData(word.toLocaleLowerCase())
       setPokeInfo(data)
       toast.success('Pokemon Encontrado')
-      navigate(`/poke-api/details/${e.target.name.value}`)
+      navigate(`/poke-api/details/${word.toLocaleLowerCase()}`)
     }else{
       toast.error('No hay algo que buscar')
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-[90%] flex gap-3 justify-between" action="">
+    <form onSubmit={handleSubmit} className="w-[90%] flex gap-3 justify-between" >
       <input
         className="bg-yellow-400 py-2 px-5 w-[85%] rounded-md text-black placeholder:text-black"
         type="text"

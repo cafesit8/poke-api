@@ -35,7 +35,7 @@ export default function Details() {
               </ul>
             </div>
         </article>
-        <Link to={'/poke-api'} onClick={() => setPokeInfo(undefined)} className="bg-blue-700 text-center text-white py-2 rounded-lg transition-all hover:tracking-[10px]">Volver</Link>
+        <Link to={'/poke-api/'} onClick={() => setPokeInfo(undefined)} className="bg-blue-700 text-center text-white py-2 rounded-lg transition-all hover:tracking-[10px]">Volver</Link>
     </section>
   )
 }

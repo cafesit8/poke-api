@@ -8,7 +8,7 @@ interface Props {
 export default function PokeCard({ item }: Props) {
   const navigation = useNavigate()
   function deatils(){
-      navigation(`/poke-api/details/${item.name}`)
+      navigation(`/poke-api/details/${item.name.toLocaleLowerCase()}`)
   }
   return (
     <article onClick={deatils} className="bg-gray-700 cursor-pointer p-2 rounded-lg">
